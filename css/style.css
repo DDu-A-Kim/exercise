@@ -1,13 +1,3 @@
-@charset "utf-8";
-*{margin: 0; padding: 0;}
-li{list-style: none;}
-a{
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-img{display: block;}
-
 #bgvideo{
     min-width:100%; 
     min-height:100vh;
@@ -29,3 +19,10 @@ img{display: block;}
     text-align: right;
     color: #ccc;
 }
+.gnb{
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+.sub{display: none;}

@@ -1,0 +1,15 @@
+.pub_table{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 40%;
+    line-height: 40px;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+/* .pub_table td{ */
+/*     width: 300px; */
+/*     height: 5vh; */
+/* } */
