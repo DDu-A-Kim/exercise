@@ -1,0 +1,118 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{
+    text-decoration: none;
+    color: inherit;
+    display: block;/* 속성을 블록으로 할경우 앵커의 크기가 이미지를 벗어난 위치까지 커져서 이미지를 벗어난 공간에서도 앵커가 생성되게 된다. */
+}
+img{display: block;}
+header{
+    display: flex;/* 위의 앵커 블록속성을 이미지의 공간에 한정시키기 위하여 해당 소스를 걸어준다. 
+    플렉스는 담고있는 요소를 본인의 높이만큼 키우고 담고있는 요소의 폭만큼 줄여서 나란히 정렬시키는 성질
+    즉, 앵커의 이미지 크기만큼 줄여서 벗어난 공간으로 앵커가 늘어나지 않도록 해준다.*/
+    justify-content: center;
+    padding: 20px 0 ;
+    margin: 0 auto;
+    width: 80%;
+    position: relative;
+}
+header img, footer img{/* 반응형으로 만들때에는 vw(screen 크기에 비례) 혹은 %(header 크기에 비례)로 설정해준다. */
+    width: 40vw;
+}
+nav{
+    background: #eee;
+}
+.gnb{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+.gnb a{
+    padding: 10px;
+}
+.gnb a:hover{
+    color: #f33;
+    text-decoration: underline;
+}
+#contents{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+#contents img{
+    width: 100%;
+}
+.sub{
+    display: flex;
+    flex-wrap: wrap;/* 플렉스의 성질은 담고있는 요소의 폭을 본인의 폭에 맞추기 때문에 플렉스 랩으로 감싸면 자기의 크기에 맞춰 요소를 맞춰놓고 내려준다.  */
+}
+.sub li{
+    width: 33.3333%;
+}
+footer{
+    background: #a33;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+#contents a{
+    outline: 1px #eee solid;
+    outline-offset: -1px;
+    transition: .3s;
+}
+#contents a:hover{
+    outline: 5px #f33 solid;
+    outline-offset: -5px;
+}
+
+/* 버거메뉴 세팅 */
+.burger{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+.bar{
+    width: 40px;
+    height: 8px;
+    background: #999;
+    transition: .8s;
+}
+.bar:nth-child(2), .bar:nth-child(4){
+    position: relative;
+    top: 8px;
+}
+.burger.on .bar:nth-child(1), 
+.burger.on .bar:nth-child(4){
+    opacity: 0;
+}
+.burger.on .bar:nth-child(2){
+    transform: rotate(45deg);
+}
+.burger.on .bar:nth-child(3){
+    transform: rotate(-45deg);
+}
+.v_gnb{
+    position: absolute;
+    right: 0;
+    background: rgba(145, 144, 144, .6);
+    line-height: 40px;
+    width: 200px;
+    text-align: center;
+    display: none;
+}
+@media screen and (max-width:1024px){
+    nav{display: none;}
+    #contents{width: /* 100% */ calc(100% - 48px);}
+    .burger{display: block;}
+    .v_gnb.on{display: block;}
+   /*  .sub li:nth-child(2n+3){ */
+   /*      display: none; */
+   /*  } */
+}
