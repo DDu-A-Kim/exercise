@@ -107,7 +107,7 @@ footer{
     text-align: center;
     transition: .8s;
     display: block;
-    opacity: 0;
+    overflow: hidden;
 }
 @media screen and (max-width:1024px){
     nav{display: none;}
@@ -116,7 +116,6 @@ footer{
     .v_gnb.on{
         display: block;
         right: 0;
-        opacity: 1;
     }
    /*  .sub li:nth-child(2n+3){ */
    /*      display: none; */
